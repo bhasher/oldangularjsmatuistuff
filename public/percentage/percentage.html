@@ -1,0 +1,21 @@
+<md-content style="margin: 16px; padding:16px">
+  <div layout="row" layout-xs="column">
+    <md-slider-container flex="">
+      <span>%</span>
+      <md-slider min="0" max="100" ng-model="percentage" 
+        id='percentage-slider' aria-label="blue" class="md-primary">
+      </md-slider>
+      <md-input-container>
+        <input type="number" ng-model="percentage" 
+          aria-label="red" aria-controls="percentage-slider">
+      </md-input-container>
+    </md-slider-container>
+    <div layout="row" flex="" layout-align="center center">
+      <md-progress-circular md-mode="determinate" 
+        value="{{ percentage }}"></md-progress-circular>
+      <md-button class="md-raised md-primary" ng-click='toastPercentage()'>
+        Click Me!
+      </md-button>
+    </div>
+  </div>
+</md-content>

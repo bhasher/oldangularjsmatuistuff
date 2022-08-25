@@ -1,0 +1,29 @@
+<md-content layout="row" layout-align="center center">
+  <md-button ng-click='refresh()'>Refresh</md-button>
+</md-content>
+<md-content layout="row" layout-wrap layout-align="center center">
+  <md-card ng-repeat='person in people' 
+      flex="40" flex-sm="70" flex-xs="100">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline" layout="row" layout-xs="column">
+          <div>{{ person.name.first }}&nbsp;</div>
+          <div>{{ person.name.last }}</div>
+        </span>
+        <span class="md-subhead" layout="row" layout-xs="column">
+          <div>{{ person.email.split('@')[0] }}</div>
+          <div>{{ "@" + person.email.split('@')[1] }}</div>
+        </span>
+      </md-card-title-text>
+      <md-card-title-media>
+        <img class="md-media-md card-media" 
+            src={{person.picture.large}} />
+      </md-card-title-media>
+    </md-card-title>
+    <md-card-actions layout="row" layout-align="end center">
+      <md-button ng-href='/#!/people/{{person.login.username}}'>
+        Select
+      </md-button>
+    </md-card-actions>
+  </md-card>
+</md-content>

@@ -1,0 +1,45 @@
+<div id='popupContainer'>
+  <md-content ng-if='person !== undefined'>
+    <md-card layout="row" layout-align="center center">
+      <div layout="column" style='padding-top: 16px;'>
+        <img ng-src="{{person.picture.large}}" style='border-radius: 50%;'
+          width="200px" height="auto" />
+        <h2>{{ person.name.first }} {{ person.name.last }}</h2>
+      </div>
+    </md-card>
+    <div layout="row" layout-xs="column" layout-align="center center" layout-margin="5px">
+      <md-card flex="" layout-fill>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Address</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content layout='column' layout-align="center center">
+          <div>
+            {{ person.location.street.number + ' ' + person.location.street.name }}
+          </div>
+          <div layout='row' layout-xs='column'>
+            <div>
+              {{ person.location.city + ', ' + person.location.state }}&nbsp;
+            </div>
+            <div>
+              {{ person.location.country + ' ' + person.location.postcode }}
+            </div>
+          </div>
+        </md-card-content>
+      </md-card>
+      <md-card flex="" layout-fill>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Contact Info</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content layout='column' layout-align="center center">
+          <div>Email: {{ person.email }}</div>
+          <div>Phone: {{ person.phone }}</div>
+          <div> Cell: {{ person.cell }}</div>
+        </md-card-content>
+      </md-card>
+    </div>
+  </md-content>
+</div>
